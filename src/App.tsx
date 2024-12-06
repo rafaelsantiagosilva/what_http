@@ -1,0 +1,34 @@
+import { GlobalStyles } from './styles/global.styles';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
+import { lightTheme, darkTheme } from './styles/themes';
+import Header from './components/Header/index';
+import Footer from './components/Footer';
+
+interface AppContentProps {
+	isDarkMode: boolean;
+	toggleTheme: () => void;
+}
+
+function AppContent({ isDarkMode, toggleTheme }: AppContentProps) {
+	return (
+		<>
+			<Header isDarkTheme={isDarkMode} toggleTheme={toggleTheme} />
+			<Footer />
+		</>
+	);
+}
+
+export default function App() {
+	const { isDarkMode, toggleTheme } = useTheme();
+	const theme = isDarkMode ? darkTheme : lightTheme;
+
+	return (
+		<ThemeProvider>
+			<StyledThemeProvider theme={theme}>
+				<GlobalStyles theme={theme} />
+				<AppContent isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+			</StyledThemeProvider>
+		</ThemeProvider>
+	);
+}
