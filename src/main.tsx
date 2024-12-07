@@ -7,8 +7,6 @@ import { ThemeProvider } from './context/ThemeContext'; // Importando o ThemePro
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
 		<ThemeProvider>
-			{' '}
-			{/* Envolvendo o App com o ThemeProvider */}
 			<App />
 		</ThemeProvider>
 	</StrictMode>
