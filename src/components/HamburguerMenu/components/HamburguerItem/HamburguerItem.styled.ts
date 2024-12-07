@@ -17,6 +17,9 @@ export const HamburguerItemStyle = styled.div<HamburguerItemStyleProps>`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  border-top: ${({borderTop}) => borderTop ? '1px solid' : '0px' };
+  border-top: ${({ borderTop }) => borderTop ? '1px solid' : '0px'};
   white-space: nowrap;
-`;
+
+  * {
+    color: ${({ theme }) => theme.primaryTextColor};
+  }`;

@@ -34,7 +34,8 @@ export const HamburguerStyle = styled.menu<HamburguerStyleProps>`
   .btn-close {
     font-size: 250%;
     padding: 0.3rem 1rem;
+    color: ${({ theme }) => theme.primaryTextColor};
   }
 
-  animation: hamburguerOpenAnimation 0.3s ease-in-out ${({isHamburguerOpen}) => !isHamburguerOpen && 'reverse'};
+  animation: hamburguerOpenAnimation 0.3s ease-in-out ${({ isHamburguerOpen }) => !isHamburguerOpen && 'reverse'};
 `;

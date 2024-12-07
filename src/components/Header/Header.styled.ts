@@ -29,6 +29,7 @@ export const HeaderStyle = styled.header<ThemeProps>`
 
   nav.navbar > a {
     white-space: nowrap;
+    color: ${({ theme }) => theme.primaryTextColor};
   };
 
   button.btn-theme {
@@ -56,6 +57,7 @@ export const HeaderStyle = styled.header<ThemeProps>`
     button.btn-open-hamburguer {
       display: block;
       font-size: 150%;
+      color: ${({ theme }) => theme.primaryTextColor};
     }
 
     nav.navbar {
