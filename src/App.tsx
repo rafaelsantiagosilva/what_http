@@ -4,6 +4,8 @@ import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { lightTheme, darkTheme } from './styles/themes';
 import Header from './components/Header/index';
 import Footer from './components/Footer';
+import HamburguerMenu from './components/HamburguerMenu';
+import { useState } from 'react';
 
 interface AppContentProps {
 	isDarkMode: boolean;
@@ -11,9 +13,12 @@ interface AppContentProps {
 }
 
 function AppContent({ isDarkMode, toggleTheme }: AppContentProps) {
+	const [isHamburguerOpen, setIsHamburguerOpen] = useState(false);
+	
 	return (
 		<>
-			<Header isDarkTheme={isDarkMode} toggleTheme={toggleTheme} />
+			{isHamburguerOpen && <HamburguerMenu isDarkMode={isDarkMode} toggleTheme={toggleTheme} isHamburguerOpen setIsHamburguerOpen={setIsHamburguerOpen} />}
+			<Header isDarkTheme={isDarkMode} toggleTheme={toggleTheme} setIsHamburguerOpen={setIsHamburguerOpen} />
 			<Footer />
 		</>
 	);

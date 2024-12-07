@@ -2,3 +2,13 @@
 	font-family: 'VarelaRound';
 	src: url('../assets/fonts/VarelaRound.ttf') format('truetype');
 }
+
+@keyframes hamburguerOpenAnimation {
+	0% {
+		transform: translateX(100%);
+	}
+
+	100% {
+		transform: translateX(0%);
+	}
+}

@@ -35,6 +35,10 @@ export const HeaderStyle = styled.header<ThemeProps>`
     cursor: pointer;
   };
 
+  button.btn-open-hamburguer {
+      display: none;
+  };
+
   .theme-icon {
     color: ${({ theme }) => theme.primaryColor};
     font-size: 150%;
@@ -46,4 +50,16 @@ export const HeaderStyle = styled.header<ThemeProps>`
   justify-content: space-between;
   box-shadow: 8px 2px 8px rgba(0, 0, 0, 0.3);
   width: 100dvw;
+  z-index: 2;
+
+  @media screen and (max-width: 768px) {
+    button.btn-open-hamburguer {
+      display: block;
+      font-size: 150%;
+    }
+
+    nav.navbar {
+      display: none;
+    }
+  }
 `;

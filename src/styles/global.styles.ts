@@ -16,10 +16,14 @@ export const GlobalStyles = createGlobalStyle<ThemeProps>`
 
   a {
     color: ${({ theme }) => theme.primaryColor};
-  }
+  };
 
   a:hover {
     text-decoration: underline;
     color: ${({ theme }) => theme.primaryColorHover};
-  }
+  };
+
+  button {
+    cursor: pointer;
+  };
 `;

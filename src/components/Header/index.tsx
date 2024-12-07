@@ -1,12 +1,19 @@
 import { HeaderStyle } from './Header.styled';
 import { AiOutlineGlobal } from 'react-icons/ai';
 import { IoMdSunny, IoMdMoon } from 'react-icons/io';
-interface HeaderProps {
+import { RxHamburgerMenu } from 'react-icons/rx';
+
+export interface HeaderProps {
 	isDarkTheme: boolean;
 	toggleTheme: () => void;
+	setIsHamburguerOpen: (isHamburguerOpen: true) => void;
 }
 
-export default function Header({ isDarkTheme, toggleTheme }: HeaderProps) {
+export default function Header({
+	isDarkTheme,
+	toggleTheme,
+	setIsHamburguerOpen,
+}: HeaderProps) {
 	return (
 		<HeaderStyle>
 			<a className="logo" href="#">
@@ -24,6 +31,9 @@ export default function Header({ isDarkTheme, toggleTheme }: HeaderProps) {
 					)}
 				</button>
 			</nav>
+			<button className="btn-open-hamburguer" onClick={() => setIsHamburguerOpen(true)}>
+				<RxHamburgerMenu />
+			</button>
 		</HeaderStyle>
 	);
 }
