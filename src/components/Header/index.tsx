@@ -21,8 +21,12 @@ export default function Header({
 				<h1 className="main-title">What HTTP?</h1>
 			</a>
 			<nav className="navbar">
-				<a href="">HTTP Cats</a>
-				<a href="">Github</a>
+				<a href="https://http.cat/" target="blank">
+					HTTP Cats
+				</a>
+				<a href="https://github.com/rafaelsantiagosilva/what_http/" target="blank">
+					Github
+				</a>
 				<button className="btn-theme" onClick={toggleTheme}>
 					{isDarkTheme ? (
 						<IoMdMoon className="theme-icon" />
@@ -31,7 +35,10 @@ export default function Header({
 					)}
 				</button>
 			</nav>
-			<button className="btn-open-hamburguer" onClick={() => setIsHamburguerOpen(true)}>
+			<button
+				className="btn-open-hamburguer"
+				onClick={() => setIsHamburguerOpen(true)}
+			>
 				<RxHamburgerMenu />
 			</button>
 		</HeaderStyle>

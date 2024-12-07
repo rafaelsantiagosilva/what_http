@@ -8,17 +8,20 @@ interface HamburguerMenuProps {
 	toggleTheme: () => void;
 	isHamburguerOpen: boolean;
 	setIsHamburguerOpen: (isHamburguerOpen: boolean) => void;
-};
+}
 
 export default function HamburguerMenu({
 	isDarkMode,
 	toggleTheme,
 	isHamburguerOpen,
-	setIsHamburguerOpen
+	setIsHamburguerOpen,
 }: HamburguerMenuProps) {
 	return (
 		<HamburguerStyle isHamburguerOpen={isHamburguerOpen}>
-			<button className="btn-hamburguer btn-close" onClick={() => setIsHamburguerOpen(false)}>
+			<button
+				className="btn-hamburguer btn-close"
+				onClick={() => setIsHamburguerOpen(false)}
+			>
 				<IoClose />
 			</button>
 			<HamburguerItem borderTop={true}>
@@ -37,10 +40,14 @@ export default function HamburguerMenu({
 				</button>
 			</HamburguerItem>
 			<HamburguerItem>
-				<a href="">HTTP Cats</a>
+				<a href="https://http.cat/" target="blank">
+					HTTP Cats
+				</a>
 			</HamburguerItem>
 			<HamburguerItem>
-				<a href="">Github</a>
+				<a href="https://github.com/rafaelsantiagosilva/what_http" target="blank">
+					Github
+				</a>
 			</HamburguerItem>
 		</HamburguerStyle>
 	);
