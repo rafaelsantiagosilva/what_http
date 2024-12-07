@@ -11,6 +11,7 @@ export interface HeaderProps {
 	setIsHamburguerOpen: (isHamburguerOpen: true) => void;
 	userInput: string;
 	setUserInput: (userInput: string) => void;
+	setHttpCode: (code: number) => void;
 }
 
 export default function Header({
@@ -19,6 +20,7 @@ export default function Header({
 	setIsHamburguerOpen,
 	userInput,
 	setUserInput,
+	setHttpCode,
 }: HeaderProps) {
 	const receiveUserInput = (newUserInput: string) => {
 		const NEW_USER_INPUT_LENGTH = newUserInput.length;
@@ -35,7 +37,7 @@ export default function Header({
 
 	const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		alert(userInput);
+		setHttpCode(Number(userInput));
 	};
 
 	return (
@@ -48,7 +50,7 @@ export default function Header({
 				<IoSearchSharp />
 				<input
 					className="input-search-code"
-					placeholder="Pesquisar"
+					placeholder="Insira um código"
 					value={userInput}
 					onChange={(e) => receiveUserInput(e.target.value)}
 					type="text"

@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import HamburguerMenu from './components/HamburguerMenu';
 import { useState } from 'react';
 import Article from './components/Article';
+import CodeViewer from './components/CodeViewer';
 
 interface AppContentProps {
 	isDarkMode: boolean;
@@ -16,6 +17,7 @@ interface AppContentProps {
 function AppContent({ isDarkMode, toggleTheme }: AppContentProps) {
 	const [isHamburguerOpen, setIsHamburguerOpen] = useState(false);
 	const [userInput, setUserInput] = useState('');
+	const [httpCode, setHttpCode] = useState(0);
 
 	return (
 		<>
@@ -33,8 +35,10 @@ function AppContent({ isDarkMode, toggleTheme }: AppContentProps) {
 				setIsHamburguerOpen={setIsHamburguerOpen}
 				userInput={userInput}
 				setUserInput={setUserInput}
+				setHttpCode={setHttpCode}
 			/>
 			<Article />
+			<CodeViewer code={httpCode} />
 			<Footer />
 		</>
 	);
