@@ -12,6 +12,7 @@ export const GlobalStyles = createGlobalStyle<ThemeProps>`
     background-color: ${({ theme }) => theme.backgroundColor};
     color: ${({ theme }) => theme.primaryTextColor};
     transition: 0.3s;
+    overflow-x: hidden;
   };
 
   a {
