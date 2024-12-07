@@ -18,6 +18,28 @@ export const HeaderStyle = styled.header<ThemeProps>`
     text-decoration: none;
   };
 
+  form.link-to-search {
+    color: ${({ theme }) => theme.primaryTextColor};
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 120%;
+    border: 1px solid ${({ theme }) => theme.primaryTextColor};
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    margin: 0 1rem;
+    flex: 1;
+  };
+
+  input.input-search-code {
+    font-size: 100%;
+    width: 100%;
+  }
+
+  input.input-search-code:focus {
+    outline: none;
+  }
+
   nav.navbar {
     display: flex;
     align-items: center;

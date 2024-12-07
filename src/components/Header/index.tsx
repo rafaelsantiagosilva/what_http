@@ -2,6 +2,7 @@ import { HeaderStyle } from './Header.styled';
 import { AiOutlineGlobal } from 'react-icons/ai';
 import { IoMdSunny, IoMdMoon } from 'react-icons/io';
 import { RxHamburgerMenu } from 'react-icons/rx';
+import { IoSearchSharp } from 'react-icons/io5';
 
 export interface HeaderProps {
 	isDarkTheme: boolean;
@@ -20,6 +21,10 @@ export default function Header({
 				<AiOutlineGlobal className="main-icon" />
 				<h1 className="main-title">What HTTP?</h1>
 			</a>
+			<form className="link-to-search">
+				<IoSearchSharp />
+				<input className="input-search-code" placeholder="Pesquisar"></input>
+			</form>
 			<nav className="navbar">
 				<a href="https://http.cat/" target="blank">
 					HTTP Cats
