@@ -6,6 +6,7 @@ import Header from './components/Header/index';
 import Footer from './components/Footer';
 import HamburguerMenu from './components/HamburguerMenu';
 import { useState } from 'react';
+import Article from './components/Article';
 
 interface AppContentProps {
 	isDarkMode: boolean;
@@ -14,11 +15,23 @@ interface AppContentProps {
 
 function AppContent({ isDarkMode, toggleTheme }: AppContentProps) {
 	const [isHamburguerOpen, setIsHamburguerOpen] = useState(false);
-	
+
 	return (
 		<>
-			{isHamburguerOpen && <HamburguerMenu isDarkMode={isDarkMode} toggleTheme={toggleTheme} isHamburguerOpen setIsHamburguerOpen={setIsHamburguerOpen} />}
-			<Header isDarkTheme={isDarkMode} toggleTheme={toggleTheme} setIsHamburguerOpen={setIsHamburguerOpen} />
+			{isHamburguerOpen && (
+				<HamburguerMenu
+					isDarkMode={isDarkMode}
+					toggleTheme={toggleTheme}
+					isHamburguerOpen
+					setIsHamburguerOpen={setIsHamburguerOpen}
+				/>
+			)}
+			<Header
+				isDarkTheme={isDarkMode}
+				toggleTheme={toggleTheme}
+				setIsHamburguerOpen={setIsHamburguerOpen}
+			/>
+			<Article />
 			<Footer />
 		</>
 	);
