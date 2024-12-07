@@ -37,5 +37,9 @@ export const HamburguerStyle = styled.menu<HamburguerStyleProps>`
     color: ${({ theme }) => theme.primaryTextColor};
   }
 
+  a:hover {
+    color: ${({ theme }) => theme.primaryTextColor};
+  }
+
   animation: hamburguerOpenAnimation 0.3s ease-in-out ${({ isHamburguerOpen }) => !isHamburguerOpen && 'reverse'};
 `;
