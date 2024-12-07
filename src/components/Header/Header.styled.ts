@@ -34,6 +34,7 @@ export const HeaderStyle = styled.header<ThemeProps>`
   input.input-search-code {
     font-size: 100%;
     width: 100%;
+    color: ${({ theme }) => theme.primaryTextColor};
   }
 
   input.input-search-code:focus {
