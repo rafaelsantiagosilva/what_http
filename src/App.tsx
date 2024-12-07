@@ -15,6 +15,7 @@ interface AppContentProps {
 
 function AppContent({ isDarkMode, toggleTheme }: AppContentProps) {
 	const [isHamburguerOpen, setIsHamburguerOpen] = useState(false);
+	const [userInput, setUserInput] = useState('');
 
 	return (
 		<>
@@ -30,6 +31,8 @@ function AppContent({ isDarkMode, toggleTheme }: AppContentProps) {
 				isDarkTheme={isDarkMode}
 				toggleTheme={toggleTheme}
 				setIsHamburguerOpen={setIsHamburguerOpen}
+				userInput={userInput}
+				setUserInput={setUserInput}
 			/>
 			<Article />
 			<Footer />
