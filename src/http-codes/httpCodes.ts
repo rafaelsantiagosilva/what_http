@@ -30,7 +30,7 @@ const httpCodes: Record<string, HttpCode> = {
   },
   "103": {
     name: "Dicas iniciais",
-    description: "103 Early Hints A resposta de informações HTTP pode ser enviada por um servidor enquanto ele ainda está preparando uma resposta, com dicas sobre os recursos que o servidor espera que a resposta final vincule.<br/> Isso permite que um navegador comece a pré-carregar recursos antes mesmo que o servidor tenha preparado e enviado a resposta final.",
+    description: "103 Early Hints A resposta de informações HTTP pode ser enviada por um servidor enquanto ele ainda está preparando uma resposta, com dicas sobre os recursos que o servidor espera que a resposta final vincule. Isso permite que um navegador comece a pré-carregar recursos antes mesmo que o servidor tenha preparado e enviado a resposta final.",
     used: true,
     experimental: true,
     oficial: false
@@ -58,7 +58,7 @@ const httpCodes: Record<string, HttpCode> = {
   },
   "203": {
     name: "Informações não autorizadas",
-    description: "O status da resposta HTTP 203 Non-Authoritative Information indica que a solicitação foi bem-sucedida, mas a carga útil incluída foi modificada por um proxy de transformação daquela da 200 OKresposta do servidor de origem.",
+    description: "O status da resposta HTTP 203 Non-Authoritative Information indica que a solicitação foi bem-sucedida, mas a carga útil incluída foi modificada por um proxy de transformação daquela da 200 OK resposta do servidor de origem.",
     used: true,
     experimental: false,
     oficial: false
@@ -107,10 +107,66 @@ const httpCodes: Record<string, HttpCode> = {
   },
   "226": {
     name: "IM Usado",
-    description: "O 226 IM Used status de resposta HTTP, no contexto de codificações delta, é um código de status definido pelo servidor para indicar que ele está retornando um delta para a solicitação GET que recebeu. IM significa Instance Manipulations , o termo usado para descrever um algoritmo que gera um delta.",
+    description: "O 226 IM Used status de resposta HTTP, no contexto de codificações delta, é um código de status definido pelo servidor para indicar que ele está retornando um delta para a solicitação GET que recebeu. IM significa Instance Manipulations, o termo usado para descrever um algoritmo que gera um delta.",
     used: true,
     experimental: false,
     oficial: false
+  },
+  "300": {
+    name: "Escolhas múltiplas",
+    description: "O código de resposta de status de redirecionamento HTTP 300 Multiple Choices indica que a solicitação tem mais de uma resposta possível. O agente do usuário ou o usuário deve escolher um deles.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "301": {
+    name: "Movido permanentemente",
+    description: "O 301 Moved Permanently código de resposta de status de redirecionamento HTTP indica que o recurso solicitado foi definitivamente movido para a URL fornecida pelos Location cabeçalhos. Um navegador redireciona para a nova URL e os mecanismos de busca atualizam seus links para o recurso.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "302": {
+    name: "Encontrado",
+    description: "O código de resposta de status de redirecionamento HTTP 302 Found indica que o recurso solicitado foi temporariamente movido para a URL fornecida pelo Location cabeçalho. Um navegador redireciona para esta página, mas os mecanismos de busca não atualizam seus links para o recurso (em 'SEO-speak', diz-se que o 'link-juice' não é enviado para a nova URL).",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "303": {
+    name: "Ver outros",
+    description: "O código de resposta de status de redirecionamento HTTP 303 See Other indica que os redirecionamentos não vinculam ao recurso solicitado em si, mas a outra página (como uma página de confirmação, uma representação de um objeto do mundo real — consulte HTTP range-14 — ou uma página de progresso de upload).",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "304": {
+    name: "Não modificado",
+    description: "O código de resposta de redirecionamento do cliente HTTP 304 Not Modified indica que não há necessidade de retransmitir os recursos solicitados. É um redirecionamento implícito para um recurso em cache. Isso acontece quando o método de solicitação é um método seguro, como GET or HEAD, ou quando a solicitação é condicional e usa um If-None-Match ou um If-Modified-Sincecabeçalho.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "305": {
+    name: "Usar proxy",
+    description: "O código de status de resposta HTTP 305 Use Proxy é um código de status HTTP obsoleto retornado por um servidor de origem para indicar que o recurso solicitado só pode ser acessado por meio de um servidor proxy.",
+    used: false,
+    experimental: false,
+    oficial: true
+  },
+  "307": {
+    name: "Redirecionamento temporário",
+    description: "O código de resposta de status de redirecionamento HTTP 307 Temporary Redirect indica que o recurso solicitado foi movido temporariamente para a URL fornecida pelos Location cabeçalhos.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "308": {
+    name: "Redirecionamento permanente",
+    description: "O código de resposta de status de redirecionamento HTTP 308 Permanent Redirect indica que o recurso solicitado foi definitivamente movido para a URL fornecida pelos Location cabeçalhos. Um navegador redireciona para esta página e os mecanismos de busca atualizam seus links para o recurso (em 'SEO-speak', diz-se que o 'link-juice' é enviado para a nova URL).",
+    used: true,
+    experimental: false,
+    oficial: true
   },
 }
 
