@@ -168,6 +168,147 @@ const httpCodes: Record<string, HttpCode> = {
     experimental: false,
     oficial: true
   },
+  "400": {
+    name: "Pedido ruim",
+    description: "O código de status de resposta HTTP 400 Bad Request indica que o servidor não pode ou não processará a solicitação devido a algo que é percebido como um erro do cliente (por exemplo, sintaxe de solicitação malformada, enquadramento de mensagem de solicitação inválido ou roteamento de solicitação enganoso).",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "401": {
+    name: "Não autorizado",
+    description: "O 401 Unauthorized código de status de resposta HTTP indica que a solicitação do cliente não foi concluída porque não há credenciais de autenticação válidas para o recurso solicitado.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "402": {
+    name: "Pagamento necessário",
+    description: "O HTTP 402 Payment Required é um código de status de resposta não padrão que é reservado para uso futuro. Este código de status foi criado para habilitar dinheiro digital ou sistemas de pagamento (micro) e indicaria que o conteúdo solicitado não está disponível até que o cliente faça um pagamento.",
+    used: true,
+    experimental: true,
+    oficial: true,
+  },
+  "403": {
+    name: "Proibido",
+    description: "O código de status de resposta HTTP 403 Forbidden indica que o servidor entende a solicitação, mas se recusa a autorizá-la.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "404": {
+    name: "Não encontrado",
+    description: "O código de status de resposta HTTP 404 Not Found indica que o servidor não consegue encontrar o recurso solicitado. Links que levam a uma página 404 são frequentemente chamados de links quebrados ou mortos e podem estar sujeitos a link rot.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "405": {
+    name: "Não permitido",
+    description: "O 405 Method Not Allowed código de status de resposta HTTP indica que o servidor conhece o método de solicitação, mas o recurso de destino não oferece suporte a esse método.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "406": {
+    name: "Não aceitável",
+    description: "O código de resposta de erro do cliente HTTP 406 Not Acceptable indica que o servidor não pode produzir uma resposta correspondente à lista de valores aceitáveis ​​definidos nos cabeçalhos de negociação de conteúdo proativo da solicitação e que o servidor não está disposto a fornecer uma representação padrão.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "407": {
+    name: "Autenticação de proxy necessária",
+    description: "O código de resposta de status de erro do cliente HTTP 407 Proxy Authentication Required indica que a solicitação não foi aplicada porque não possui credenciais de autenticação válidas para um servidor proxy que está entre o navegador e o servidor que pode acessar o recurso solicitado.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "408": {
+    name: "Tempo limite de solicitação",
+    description: "O 408 Request Timeout código de status de resposta HTTP significa que o servidor gostaria de desligar esta conexão não utilizada. Ele é enviado em uma conexão ociosa por alguns servidores, mesmo sem nenhuma solicitação anterior do cliente.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "409": {
+    name: "Conflito",
+    description: "O 409 Conflict código de status de resposta HTTP indica um conflito de solicitação com o estado atual do recurso de destino.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "410": {
+    name: "Perdido",
+    description: "O código de resposta de erro do cliente HTTP 410 Gone indica que o acesso ao recurso de destino não está mais disponível no servidor de origem e que essa condição provavelmente será permanente.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "411": {
+    name: "Comprimento necessário",
+    description: "O 411 Length Required código de resposta de erro do cliente HTTP indica que o servidor se recusa a aceitar a solicitação sem um cabeçalho definido Content-Length.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "412": {
+    name: "Pré-condição falhou",
+    description: "O código de resposta de erro do cliente HTTP 412 Precondition Failed indica que o acesso ao recurso de destino foi negado. Isso acontece com solicitações condicionais em métodos diferentes de GET ou HEAD quando a condição definida pelos cabeçalhos If-Unmodified-Since ou If-None-Match não é atendida. Nesse caso, a solicitação, geralmente um upload ou uma modificação de um recurso, não pode ser feita e essa resposta de erro é enviada de volta.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "413": {
+    name: "Carga útil muito grande",
+    description: "O código de status de resposta HTTP 413 Content Too Large indica que a entidade da solicitação é maior que os limites definidos pelo servidor; o servidor pode fechar a conexão ou retornar um Retry-After campo de cabeçalho.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "414": {
+    name: "Solicitação-URI muito longa",
+    description: "O código de status de resposta HTTP 414 URI Too Long indica que o URI solicitado pelo cliente é maior do que o servidor está disposto a interpretar.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "415": {
+    name: "Tipo de mídia não suportado",
+    description: "O 415 Unsupported Media Typecódigo de resposta de erro do cliente HTTP indica que o servidor se recusa a aceitar a solicitação porque o formato da carga útil está em um formato não suportado.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "416": {
+    name: "Intervalo de solicitação não satisfatório",
+    description: "O código de resposta de erro HTTP 416 Range Not Satisfiable indica que um servidor não pode servir os intervalos solicitados. O motivo mais provável é que o documento não contém tais intervalos, ou que o valor do cabeçalho Range, embora sintaticamente correto, não faz sentido.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "417": {
+    name: "Expectativa falhou",
+    description: "O 417 Expectation Failed código de resposta de erro do cliente HTTP indica que a expectativa fornecida no Expect cabeçalho da solicitação não pôde ser atendida.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "418": {
+    name: "Eu sou um bule de chá",
+    description: "O 418 I'm a teapot código de resposta de erro do cliente HTTP indica que o servidor se recusa a preparar café porque ele é, permanentemente, um bule de chá. Uma cafeteira/chaleira combinada que esteja temporariamente sem café deve retornar 503. Este erro é uma referência ao Protocolo de Controle de Cafeteiras de Hipertexto definido nas piadas de 1º de abril de 1998 e 2014. Alguns sites usam essa resposta para solicitações que não desejam processar, como consultas automatizadas.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "420": {
+    name: "Fique mais calmo",
+    description: "O código de status de resposta HTTP 420 Method Failure e 420 Enhance your calm são códigos de status HTTP não oficiais que são retornados pelo servidor para indicar um erro do cliente. Quando enviado pelo Spring Framework, ele indica que um método falhou, enquanto quando enviado pelo Twitter, ele indica que o cliente está sendo limitado por fazer muitas solicitações.",
+    used: true,
+    experimental: false,
+    oficial: false
+  },
+  
 }
 
 export default httpCodes;
