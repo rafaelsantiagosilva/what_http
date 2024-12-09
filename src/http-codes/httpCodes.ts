@@ -426,6 +426,125 @@ const httpCodes: Record<string, HttpCode> = {
     used: true,
     experimental: false,
     oficial: false
+  },
+  "500": {
+    name: "Erro interno do servidor",
+    description: "O código de resposta de erro do servidor HTTP 500 Internal Server Error indica que o servidor encontrou uma condição inesperada que o impediu de atender à solicitação. Esta resposta de erro é uma resposta genérica 'catch-all'. Normalmente, isso indica que o servidor não consegue encontrar um 5xx código de erro melhor para responder.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "501": {
+    name: "Não implementado",
+    description: "O 501 Not Implemented código de resposta de erro do servidor HTTP significa que o servidor não suporta a funcionalidade necessária para atender à solicitação. Esse status também pode enviar um Retry-After cabeçalho, informando ao solicitante quando verificar novamente se a funcionalidade é suportada até então.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "502": {
+    name: "Bad Gateway",
+    description: "O código de resposta de erro do servidor HTTP 502 Bad Gateway indica que o servidor, enquanto atuava como um gateway ou proxy, recebeu uma resposta inválida do servidor upstream.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "503": {
+    name: "Serviço indisponível",
+    description: "O 503 Service Unavailable código de resposta de erro do servidor HTTP indica que o servidor não está pronto para lidar com a solicitação.Causas comuns são um servidor que está inativo para manutenção ou que está sobrecarregado. Esta resposta deve ser usada para condições temporárias e o Retry-After cabeçalho HTTP deve, se possível, conter o tempo estimado para a recuperação do serviço.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "504": {
+    name: "Tempo limite do gateway",
+    description: "O código de resposta de erro do servidor HTTP 504 Gateway Timeout indica que o servidor, embora atuando como gateway ou proxy, não obteve uma resposta a tempo do servidor upstream necessária para concluir a solicitação.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "506": {
+    name: "Variante também negocia",
+    description: "O 506 Variant Also Negotiates código de status de resposta HTTP pode ser fornecido no contexto de Negociação de Conteúdo Transparente (consulte RFC 2295). Este protocolo permite que um cliente recupere a melhor variante de um determinado recurso, onde o servidor suporta múltiplas variantes.",
+    used: true,
+    experimental: false,
+    oficial: true  
+  },
+  "507": {
+    name: "Armazenamento insuficiente",
+    description: "O 507 Insufficient Storage código de status de resposta HTTP pode ser fornecido no contexto do protocolo WebDAV (consulte RFC 4918). Indica que um método não pôde ser executado porque o servidor não pode armazenar a representação necessária para concluir a solicitação com sucesso.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "508": {
+    name: "Loop detectado",
+    description: "O 508 Loop Detected código de status de resposta HTTP pode ser fornecido no contexto do protocolo WebDAV. Indica que o servidor encerrou uma operação porque encontrou um loop infinito ao processar uma solicitação com \"Depth: infinity\". Este status indica que toda a operação falhou.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "509": {
+    name: "Limite de largura de banda excedido",
+    description: "O código de status de resposta HTTP 509 Bandwidth Limit Exceeded é um código de status HTTP não oficial específico do Apache Web Server e do cPanel que indica que o cliente de hospedagem web excedeu a cota de largura de banda no lado do servidor.",
+    used: true,
+    experimental: false,
+    oficial: false
+  },
+  "510": {
+    name: "Não estendido",
+    description: "O 510 Not Extended código de status de resposta HTTP é enviado no contexto do HTTP Extension Framework, definido no RFC 2774.Nessa especificação, um cliente pode enviar uma solicitação que contém uma declaração de extensão, que descreve a extensão a ser usada. Se o servidor receber tal solicitação, mas quaisquer extensões descritas não forem suportadas para a solicitação, então o servidor responde com o 510código de status.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "511": {
+    name: "Autenticação de rede necessária",
+    description: "O código de status de resposta HTTP 511 Network Authentication Required indica que o cliente precisa se autenticar para obter acesso à rede. Esse status não é gerado pelos servidores de origem, mas pelos proxies de interceptação que controlam o acesso à rede.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "521": {
+    name: "O servidor web está inativo",
+    description: "O código de status de resposta HTTP 521 Web Server Is Down é um código de status HTTP não oficial específico do Cloudflare .",
+    used: true,
+    experimental: false,
+    oficial: false
+  },
+  "522": {
+    name: "Tempo limite de conexão esgotado",
+    description: "O código de status de resposta HTTP 522 é um código de status HTTP não oficial específico do Cloudflare .O erro 522 ocorre quando o Cloudflare atinge o tempo limite de contato com o servidor web de origem. Dois tempos limite diferentes causam erro HTTP 522 dependendo de quando ocorrem entre o Cloudflare e o servidor web de origem: (1) Antes que uma conexão seja estabelecida, o servidor web de origem não retorna um SYN+ACK para o Cloudflare dentro de 15 segundos após o Cloudflare enviar um SYN. (2) Após o estabelecimento de uma conexão, o servidor web de origem não reconhece (ACK) a solicitação de recursos do Cloudflare em 90 segundos.",
+    used: true,
+    experimental: false,
+    oficial: false
+  },
+  "523": {
+    name: "Origem é inalcançável",
+    description: "O código de status de resposta HTTP 523 Origin Is Unreachable é um código de status HTTP não oficial específico do Cloudflare . O erro 523 ocorre quando o Cloudflare não consegue contatar seu servidor web de origem. Isso geralmente ocorre quando um dispositivo de rede entre o Cloudflare e o servidor web de origem não tem uma rota para o endereço IP da origem.",
+    used: true,
+    experimental: false,
+    oficial: false
+  },
+  "525": {
+    name: "SSL Handshake falhou",
+    description: "O código de status de resposta HTTP 525 SSL Handshake Failed é um código de status HTTP não oficial específico do Cloudflare . O erro 525 indica que o handshake SSL entre o Cloudflare e o servidor web de origem falhou. O erro 525 ocorre quando estas duas condições são verdadeiras: (1) O handshake SSL falha entre o Cloudflare e o servidor web de origem e (2) o SSL Completo ou Completo (Rigoroso) é definido na guia Visão geral do seu aplicativo SSL/TLS da Cloudflare.",
+    used: true,
+    experimental: false,
+    oficial: false
+  },
+  "530": {
+    name: "Site congelado",
+    description: "O código de status de resposta HTTP 530 Site Frozen é um código de status HTTP não oficial específico do Cloudflare e do Pantheon. O primeiro usa quando há um erro entre um usuário e um servidor web, e o segundo usa quando um Sandbox Site inativo nega solicitações HTTP.",
+    used: true,
+    experimental: false,
+    oficial: false
+  },
+  "599": {
+    name: "Erro de tempo limite de conexão de rede",
+    description: "O código de status de resposta HTTP 599 Network Connect Timeout Error é um código de status HTTP não oficial usado por alguns proxies para sinalizar um tempo limite de conexão de rede atrás do proxy para um cliente na frente do proxy.",
+    used: true,
+    experimental: false,
+    oficial: false
   }
 }
 
