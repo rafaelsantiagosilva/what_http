@@ -308,7 +308,125 @@ const httpCodes: Record<string, HttpCode> = {
     experimental: false,
     oficial: false
   },
-  
+  "421": {
+    name: "Pedido mal direcionado",
+    description: "O código de resposta de erro do cliente HTTP 421 Misdirected Request indica que a solicitação foi direcionada a um servidor que não é capaz de produzir uma resposta. Isso pode ser possível se uma conexão for reutilizada ou se um serviço alternativo for selecionado.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "422": {
+    name: "Entidade não processável",
+    description: "O código de status de resposta HTTP 422 Unprocessable Content indica que o servidor entende o tipo de conteúdo da entidade de solicitação e a sintaxe da entidade de solicitação está correta, mas não conseguiu processar as instruções contidas.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "423": {
+    name: "Bloqueado",
+    description: "O código de resposta de erro HTTP 423 Locked indica que os recursos provisoriamente visados ​​por estão bloqueados, o que significa que não podem ser acessados. Seu conteúdo deve conter algumas informações no formato XML do WebDAV.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "424": {
+    name: "Dependência com falha",
+    description: "O código de resposta de erro do cliente HTTP 424 Failed Dependency indica que o método não pôde ser executado no recurso porque a ação solicitada dependia de outra ação, e essa ação falhou.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "425": {
+    name: "Muito cedo",
+    description: "O código de status de resposta HTTP 425 Too Early indica que o servidor não está disposto a correr o risco de processar uma solicitação que pode ser repetida, o que cria o potencial para um ataque de repetição.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "426": {
+    name: "Atualização necessária",
+    description: "O código de resposta de erro do cliente HTTP 426 Upgrade Required indica que o servidor se recusa a executar a solicitação usando o protocolo atual, mas pode estar disposto a fazê-lo depois que o cliente atualizar para um protocolo diferente.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "428": {
+    name: "Pré-condição necessária",
+    description: "O 428 Precondition Required código de status de resposta HTTP indica que o servidor exige que a solicitação seja condicional.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "429": {
+    name: "Muitas solicitações",
+    description: "O código de status de resposta HTTP 429 Too Many Requests indica que o usuário enviou muitas solicitações em um determinado período de tempo ('limitação de taxa').",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "431": {
+    name: "Campos de cabeçalho de solicitação muito grandes",
+    description: "O 431 Request Header Fields Too Large código de status de resposta HTTP indica que o servidor se recusa a processar a solicitação porque os cabeçalhos HTTP da solicitação são muito longos. A solicitação pode ser reenviada após reduzir o tamanho dos cabeçalhos da solicitação.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "444": {
+    name: "Sem resposta",
+    description: "O código de status de resposta HTTP 444 No Response é um código de status HTTP não oficial específico para nginx e indica que a conexão HTTP está fechada. Nenhuma informação, nem mesmo este código de status, é enviada ao cliente.",
+    used: true,
+    experimental: false,
+    oficial: false
+  },
+  "450": {
+    name: "Bloqueado por controles parentais do Windows",
+    description: "O código de status de resposta HTTP 450 Blocked by Windows Parental Control sé um código de status HTTP não oficial específico da Microsoft e retornado pelo servidor para indicar que os controles dos pais estão ativados e bloqueando o acesso ao recurso solicitado.",
+    used: true,
+    experimental: false,
+    oficial: false
+  },
+  "451": {
+    name: "Indisponível por motivos legais",
+    description: "O código de resposta de erro do cliente HTTP 451 Unavailable For Legal Reasons indica que o usuário solicitou um recurso que não está disponível por motivos legais, como uma página da web para a qual uma ação legal foi emitida.",
+    used: true,
+    experimental: false,
+    oficial: true
+  },
+  "495": {
+    name: "Erro de certificado",
+    description: "O HTTP 495 SSL Certificate Error é um erro de cliente não oficial específico do nginx e é retornado pelo servidor para indicar que houve um erro na verificação do certificado do cliente.",
+    used: true,
+    experimental: false,
+    oficial: false
+  },
+  "496": {
+    name: "Certificado SSL necessário",
+    description: "O HTTP 496 SSL Certificate Error é um erro de cliente não oficial específico do nginx e é retornado pelo servidor para indicar que o cliente não apresentou o certificado necessário.",
+    used: true,
+    experimental: false,
+    oficial: false
+  },
+  "497": {
+    name: "Solicitação HTTP enviada para porta HTTPS",
+    description: "O código de status de resposta HTTP 497 HTTP Request Sent to HTTPS Port é um código de status HTTP não oficial específico do nginx e é retornado pelo servidor para indicar que uma solicitação HTTP regular foi enviada para a porta HTTPS.",
+    used: true,
+    experimental: false,
+    oficial: false
+  },
+  "498": {
+    name: "Token expirado/inválido",
+    description: "A resposta HTTP 498 Invalid Token é um código de status HTTP não oficial específico do ArcGIS e indica que a solicitação HTTP incluiu um token, mas não foi aceita.",
+    used: true,
+    experimental: false,
+    oficial: false
+  },
+  "499": {
+    name: "Solicitação do cliente fechada",
+    description: "O código de status de resposta HTTP 499 é um código de status HTTP não oficial que é específico do ArcGIS com 499 Token Required e do nginx com 499 Client Closed Request.",
+    used: true,
+    experimental: false,
+    oficial: false
+  }
 }
 
 export default httpCodes;
