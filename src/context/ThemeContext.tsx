@@ -14,10 +14,13 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-	const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+	const localStorageTheme = localStorage.getItem("theme") ?? "light";
+	const initialIsDarkMode = localStorageTheme === "light" ? true : false;
+	const [isDarkMode, setIsDarkMode] = useState(initialIsDarkMode);
 
 	const toggleTheme = () => {
 		setIsDarkMode((prev) => !prev);
+		localStorage.setItem("theme", isDarkMode ? "dark" : "light");
 	};
 
 	return (
