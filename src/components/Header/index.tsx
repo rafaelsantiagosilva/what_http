@@ -50,7 +50,7 @@ export default function Header({
 				<IoSearchSharp />
 				<input
 					className="input-search-code"
-					placeholder="Insira um código"
+					placeholder="Código?"
 					value={userInput}
 					onChange={(e) => receiveUserInput(e.target.value)}
 					type="text"

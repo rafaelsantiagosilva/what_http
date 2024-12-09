@@ -37,8 +37,8 @@ function AppContent({ isDarkMode, toggleTheme }: AppContentProps) {
 				setUserInput={setUserInput}
 				setHttpCode={setHttpCode}
 			/>
-			<Article />
 			<CodeViewer code={httpCode} />
+			<Article />
 			<Footer />
 		</>
 	);
